@@ -24,4 +24,5 @@ la etiqueta gender y el level se le pone value. Esto depende se del diseño. Nom
 ### todo documento de xml empieza por un DOCTYPE
 pondremos cabecera <?xml version ="1.0" enconding
 ### orden de las etiquesta no importan muvcho
-
+## Ejercicio de la sopa bonita
+consiste ejecutar lo que tiene el character.py de la libre xml.dom a libreria BeautifulSoup
