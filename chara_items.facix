@@ -1,0 +1,20 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<charaItems>
+	<charaItem id = "1">
+		<character id="1">
+		<items id="1">
+			<quantity value="1">
+	<charaItem id = "2">
+		<character id="2">
+		<items id="2">
+			<quantity value="1">
+	<charaItem id = "3">
+		<character id="3">
+			<items id="3">
+				<quantity value="1">
+	<charItem id = "4">
+		<character id="4">
+		<items id="4">
+			<quantity value="1">
+	</characters>
+</charaItems>
