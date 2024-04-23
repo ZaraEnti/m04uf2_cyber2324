@@ -20,7 +20,6 @@ characters = soup.find_all('character')
 #for en el rango de las cantidades encontradas
 for character in characters:
 
-
 #acceso texto
     name = character.find('name').string
     age = character.find('age').string 
