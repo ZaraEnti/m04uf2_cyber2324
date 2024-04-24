@@ -1,20 +1,19 @@
 <?xml version ="1.0" encoding="UTF-8"?>
 <charaItems>
 	<charaItem id = "1">
-		<character value="1">
-		<items value="1">
-			<quantity value="1">
+		<character id="1"/>
+		<items id="1" quantity="3"/>
+	</charaItem>
 	<charaItem id = "2">
-		<character value="2">
-		<items value="5">
-			<quantity value="1">
+		<character id="2"/>
+		<items id="5" quantity="1"/>
+	</charaItem>
 	<charaItem id = "3">
-		<character value="3">
-			<items value="3">
-				<quantity value="1">
+		<character value="3"/>
+		<items value="3" quantity="1"/>
+	</charaItem>
 	<charItem id = "4">
-		<character value="4">
-		<items value="4">
-			<quantity value="1">
+		<character value="4"/>
+		<items value="4" quantity="1"/>
 	</characters>
 </charaItems>
