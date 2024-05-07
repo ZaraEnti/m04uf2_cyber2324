@@ -9,12 +9,14 @@ from colorama import init, Fore
 init(autoreset=True)
 
 #título
-print(Fore.CYAN + "¡Esto es un buscador de películas!")
+title="¡Esto es un buscador de películas!"
 
-name = input(Fore.GREEN + "\nIntroduce una película: " + Fore.CYAN)
+print(Fore.CYAN + "\n"+ title)
+
+name = input(Fore.GREEN + "\nIntroduce una película: ")
 
 #iniciando la sentencia con un interrogante y le concatenamos la variable
-url = "https://search.imdbot.workers.dev/?q="+name
+url = "https://search.imdbot.workers.dev/?q=" + name
 
 #retornar una respuesta válida y si es válida un archivo json array
 movie = requests.get(url)
@@ -24,11 +26,12 @@ data = movie.json()
 if not data['description']:
     print(Fore.RED + "Error 1: No se han encontrado resultados.")
 else:
+    #indicamos solo la información de la primera búsqueda
     title = data['description'][0]['#TITLE']
     year = data['description'][0]['#YEAR']
     actors = data['description'][0]['#ACTORS']
 
-    print(Fore.GREEN + "Título:" + Fore.CYAN + f"{title}")
-    print(Fore.GREEN + "Año:" + Fore.CYAN + f"{year}")
-    print(Fore.GREEN + "Actores:" +Fore.CYAN + f"{actors}")
+    print(Fore.YELLOW + "Título:" + Fore.CYAN + f"{title}")
+    print(Fore.YELLOW + "Año:" + Fore.CYAN + f"{year}")
+    print(Fore.YELLOW + "Actores:" +Fore.CYAN + f"{actors}\n")
 
