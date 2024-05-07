@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cosa id="3">
+ <otra_cosa value="parafrita">
+  esto es una string para la otra cosa
+ </otra_cosa>
+</cosa>
