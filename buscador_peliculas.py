@@ -35,3 +35,15 @@ else:
     print(Fore.YELLOW + "Año:" + Fore.CYAN + f"{year}")
     print(Fore.YELLOW + "Actores:" +Fore.CYAN + f"{actors}\n")
 
+import gspread
+
+gc = gspread.service_account(filename='api_key.json')
+
+#nombre del archivo
+sh = gc.open("peliculas")
+
+tabla_pelis = sh.sheet1 
+
+tabla_pelis.sheet1.append_row([title, year, actors])
+
+print("append existosa")

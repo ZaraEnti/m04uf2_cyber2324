@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+#Reutilización del código de edu para hacer el ejercicio siguiente
 import subprocess
 import gspread
 import datetime
@@ -13,7 +13,7 @@ dia = fecha.strftime("%d")
 
 nombre_fecha = f"{año}-{mes}-{dia}"
 
-gc = gspread.service_account()
+gc = gspread.service_account(filename="api-key.json")
 sh_dmesg = gc.open("dmesg")
 
 worksheet_list = sh_dmesg.worksheets()
@@ -61,4 +61,5 @@ for dmesg_line in dmesg_lines:
 
 sh_dmesg.worksheet(str(nombre_fecha)).append_rows(dmesg_data)
 print (f" Array insertada \n")
+
 
