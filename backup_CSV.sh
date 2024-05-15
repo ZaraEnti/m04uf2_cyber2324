@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 import gspread
-
+import gzip
+import shutil
 #API Key
 gc = gspread.service_account(filename='api-key.json')
 sh = gc.open ("dmesg")
 
 array_page = []
-
 worksheet_list = sh.worksheets()
 
 count=1
@@ -35,59 +35,44 @@ worksheet_values = sh.worksheet(hoja_usr).get_all_values()
 
 #Selected worksheet
 #print(worksheet_values)
+print(type(worksheet_values))
 #worksheet = sh.get_worksheet(num_page)
 
 
 #Searh world
 #search_world = input(f"Introduce la palabra que quieres búscar en la hoja: {worksheet.title}")
 
-<<<<<<< HEAD
-for find_world in worksheet_select
-	
-=======
 #for find_world in worksheet_select:
  #   if find_world == search_world:
   #      print("encontrado")
 
-accion = 2
+
+
+
+#  
+accion = int(input("(1)Para consultar (2)Para hacer un backup: "))
 if accion == 1:
     #Consulta
     print("consulta")
 else:
-    #creación arrays para poner los valores de las columnas
-    time = []
-    modul= []
-    descrip=[]
-    
-    #sacamos el array de tiempo
+	#Abrimos el archivo con 'a' si existe añade
+	f = open("dmesg_backups.csv", 'a')
 
-    values_time = sh.worksheet(hoja_usr).col_values(1)
-    
-    values_modul = sh.worksheet(hoja_usr).col_values(2)
+	#creación arrays para poner los valores de las columnas
+	##1. array del contenido
+	for value in worksheet_values:
+		time_value = value[0]
+		modul_value = value[1]
+		descrip_value = value[2]
+	
+	    #escribimos en el archivo
+		f.write("{time_value}"+";"+"{modul_value}"+";"+"{descrip_value}"+";")
+	print("Archivo escrito")
+	f.close()
 
-    values_descrip = sh.worksheet(hoja_usr).col_values(3)
-    count = 0
-    for value in values_time:
-       #para tiempo
-        time.append(value+";")
-    
-
-        count += 1
-    for value in values_modul:
-        #para modulo
-        modul.append(value+";")
-
-    for value in values_descrip:
-        #para modulo
-        descrip.append(value+";")
->>>>>>> 5e7654e2dc6c94f87a967edd4fe848d7378848aa
+# compresion del archivo
+with gzip.open('dmesg_backups.cvs', 'rb') as f_in:
+	with gzip.open('dmesg_backups.cvs.gz.', 'wb') as f_out:
+		shutil.copyfileobj(f_in, f_out)
 
 
-#para saber el size de los arryas
-
-size = len(time)
-formato_CVS=""
-for num in range(size):
-    #falta crear el archivo
-    print(f"{time[num]}+{modul[num]}+{descrip[num]}") 
-    formato_CVS="time[num]+modul[num]+descrip[num]"
