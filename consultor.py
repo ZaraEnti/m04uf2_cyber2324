@@ -36,7 +36,7 @@ worksheet = sh.get_worksheet(num_page)
 #Searh world
 search_world = input(f"Introduce la palabra que quieres búscar en la hoja: {worksheet.title}")
 
-for find_world in worksheet_select:
-find_world 
+for find_world in worksheet_select
+	
 
 
