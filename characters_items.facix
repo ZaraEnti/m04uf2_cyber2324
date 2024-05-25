@@ -13,8 +13,14 @@
 		<character id="3"/>
 		<items id="3" quantity="1"/>
 	</charaItem>
-	<charItem id = "4">
+	<charaItem id = "4">
 		<character id="4"/>
 		<items id="3" quantity="1"/>
-	</characters>
+	<charaItem>
+	<charaItem id = "5">
+		<character id="5"/>
+		<items id="1" quantity="1"/>
+		<items id="2" quantity="1"/>
+		<items id="4" quantity="1"/>
+	<charaItem>
 </charaItems>

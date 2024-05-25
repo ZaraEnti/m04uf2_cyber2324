@@ -24,4 +24,10 @@
 		<gender value="F"/>
 		<level value="69"/>
 	</character>
+	<character id="5">
+		<name>El Naranjo</name>
+		<age>2077</age>
+		<gender value="H"/>
+		<level value="100"/>
+	</character>
 </characters>
